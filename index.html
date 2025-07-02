@@ -5,91 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Пряма трансляція бою Усика</title>
   <style>
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+      background: linear-gradient(135deg, #000428, #004e92, #1f1c2c, #928DAB);
+      background-size: 200% 200%;
+      animation: gradientBG 15s ease infinite;
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
     .hero {
       position: relative;
-      background: url('usyk-bg.jpg') center/cover no-repeat;
-      padding: 100px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
+      max-width: 800px;
+      animation: fadeIn 1s ease-out;
     }
-    .hero h1 {
-      font-size: 2.5em;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}  
+    }
+    .logo {
+      width: 150px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      display: inline-block;
+      animation: pulse 2s infinite;
     }
-    .highlight {
-      color: #FFD700;
+    @keyframes pulse {
+      0%,100% {transform: scale(1);} 50% {transform: scale(1.05);}  
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
     }
     .live-icon {
       background: #fff;
       color: #e60000;
       font-weight: bold;
-      padding: 5px 10px;
+      padding: 5px 12px;
       border-radius: 5px;
       margin-left: 10px;
-      font-size: 0.6em;
+      font-size: 0.7em;
       vertical-align: middle;
+      animation: blink 1s infinite;
     }
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .megogo {
-      color: #00BFFF;
-      font-weight: bold;
-    }
-    .free {
-      color: #FF4500;
-      font-weight: bold;
+    @keyframes blink { 0%,50%,100% {opacity:1;} 25%,75% {opacity:0.3;} }
+    p {
+      font-size: 1.3em;
+      margin-bottom: 40px;
     }
     .btn {
       display: inline-block;
-      padding: 15px 30px;
-      background: #e60000;
+      padding: 18px 40px;
+      background: #ff0000;
       color: #fff;
-      font-size: 1.2em;
+      font-size: 1.3em;
       text-decoration: none;
-      border-radius: 5px;
-      transition: transform 0.3s ease, background 0.3s;
+      border-radius: 50px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .btn:hover {
-      background: #bf0000;
-      transform: scale(1.05);
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
     }
     .btn-icon {
-      margin-right: 8px;
+      margin-right: 10px;
       vertical-align: middle;
+      font-size: 1.2em;
     }
     footer {
-      padding: 20px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
       font-size: 0.9em;
+      z-index: 2;
     }
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-      .btn {
-        padding: 12px 24px;
-        font-size: 1em;
-      }
+      h1 { font-size: 2em; }
+      p { font-size: 1.1em; }
+      .btn { padding: 15px 30px; font-size: 1.1em; }
+      .logo { width: 120px; }
     }
   </style>
 </head>
@@ -97,14 +113,18 @@
   <div class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1><span class="highlight">Дивіться пряму трансляцію</span> бою Усика!<span class="live-icon">🔴 LIVE</span></h1>
-      <p><span class="megogo">MEGOGO</span> транслюватиме бій <span class="free">БЕЗКОШТОВНО</span>! Отримати його можна за посиланням у описі.</p>
+      <img src="megogo-logo.png" alt="MEGOGO" class="logo" />
+      <h1>Не пропусти <span style="color:#FFD700;">бій Усика</span> наживо!<span class="live-icon">🔴 LIVE</span></h1>
+      <p><span style="color:#00BFFF; font-weight:bold;">MEGOGO</span> транслює <span style="color:#FF4500; font-weight:bold;">БЕЗКОШТОВНО</span>. Натисни кнопку і дивись БЕЗЗАТРИМОК!</p>
       <a class="btn" href="https://t.me/+rxThvU_KhhIzN2Vi" target="_blank" rel="noopener">
-        <span class="btn-icon">📺</span>Перейти до трансляції
+        <span class="btn-icon">▶️</span>Дивитися зараз
       </a>
     </div>
+    <footer>Головна спортивна подія року — будь першим!</footer>
   </div>
-  <footer>Не пропустіть головну подію року!</footer>
+</body>
+</html>
+
 </body>
 </html>
 
