@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Прямая трансляция боя Усика</title>
+  <title>Пряма трансляція бою Усика</title>
   <style>
     body {
       margin: 0;
@@ -20,6 +20,17 @@
       font-size: 2.5em;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      display: inline-block;
+    }
+    .live-icon {
+      background: #fff;
+      color: #e60000;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+      font-size: 0.6em;
+      vertical-align: middle;
     }
     .hero p {
       font-size: 1.2em;
@@ -28,15 +39,20 @@
     .btn {
       display: inline-block;
       padding: 15px 30px;
-      background: #FF0000;
+      background: #e60000;
       color: #fff;
       font-size: 1.2em;
       text-decoration: none;
       border-radius: 5px;
-      transition: background 0.3s;
+      transition: transform 0.3s ease, background 0.3s;
     }
     .btn:hover {
-      background: #CC0000;
+      background: #bf0000;
+      transform: scale(1.05);
+    }
+    .btn-icon {
+      margin-right: 8px;
+      vertical-align: middle;
     }
     footer {
       padding: 20px;
@@ -55,10 +71,13 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Смотри прямую трансляцию боя Усика!</h1>
-    <p>Получай доступ к эксклюзивной трансляции прямо в Telegram</p>
-    <a class="btn" href="https://t.me/+rxThvU_KhhIzN2Vi" target="_blank" rel="noopener">Получить доступ</a>
+    <h1>Дивіться пряму трансляцію бою Усика!<span class="live-icon">🔴 LIVE</span></h1>
+    <p>Отримайте доступ до ексклюзивної трансляції в Telegram</p>
+    <a class="btn" href="https://t.me/+rxThvU_KhhIzN2Vi" target="_blank" rel="noopener">
+      <span class="btn-icon">📺</span>Отримати доступ
+    </a>
   </div>
-  <footer>Не пропусти главное событие года!</footer>
+  <footer>Не пропустіть головну подію року!</footer>
 </body>
 </html>
+
