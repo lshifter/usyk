@@ -8,19 +8,35 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
+      background: linear-gradient(135deg, #000428 0%, #004e92 100%);
       color: #fff;
       text-align: center;
     }
     .hero {
+      position: relative;
       background: url('usyk-bg.jpg') center/cover no-repeat;
       padding: 100px 20px;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
     .hero h1 {
       font-size: 2.5em;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
       display: inline-block;
+    }
+    .highlight {
+      color: #FFD700;
     }
     .live-icon {
       background: #fff;
@@ -35,6 +51,14 @@
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
+    }
+    .megogo {
+      color: #00BFFF;
+      font-weight: bold;
+    }
+    .free {
+      color: #FF4500;
+      font-weight: bold;
     }
     .btn {
       display: inline-block;
@@ -71,13 +95,17 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Дивіться пряму трансляцію бою Усика!<span class="live-icon">🔴 LIVE</span></h1>
-    <p>Отримайте доступ до ексклюзивної трансляції в Telegram</p>
-    <a class="btn" href="https://t.me/+rxThvU_KhhIzN2Vi" target="_blank" rel="noopener">
-      <span class="btn-icon">📺</span>Отримати доступ
-    </a>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1><span class="highlight">Дивіться пряму трансляцію</span> бою Усика!<span class="live-icon">🔴 LIVE</span></h1>
+      <p><span class="megogo">MEGOGO</span> транслюватиме бій <span class="free">БЕЗКОШТОВНО</span>! Отримати його можна за посиланням у описі.</p>
+      <a class="btn" href="https://t.me/+rxThvU_KhhIzN2Vi" target="_blank" rel="noopener">
+        <span class="btn-icon">📺</span>Перейти до трансляції
+      </a>
+    </div>
   </div>
   <footer>Не пропустіть головну подію року!</footer>
 </body>
 </html>
+
 
